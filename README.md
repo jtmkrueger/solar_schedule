@@ -27,6 +27,7 @@ simple in-order scheduling
 
 ## Setup and run
 Built on ruby 3.1.2 but should work with anything greater than or equal to ruby 3.
+* `git clone git@github.com:jtmkrueger/solar_schedule.git`
 * `bundle`
 * `rails db:create db:migrate db:seed`
 * `rails schedule`
