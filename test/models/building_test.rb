@@ -12,7 +12,7 @@ class BuildingTest < ActiveSupport::TestCase
       required: {
         certified_installer: 1
       },
-      pool: {}
+      pool: {total: 0, types: []}
     }, building.crew_makeup)
   end
 
@@ -23,8 +23,8 @@ class BuildingTest < ActiveSupport::TestCase
         certified_installer: 1
       },
       pool: {
-        installer_pending_certification: 1,
-        laborer: 1
+        total: 1,
+        types: [:installer_pending_certification, :laborer]
       }
     }, building.crew_makeup)
   end
@@ -37,9 +37,12 @@ class BuildingTest < ActiveSupport::TestCase
         installer_pending_certification: 2
       },
       pool: {
-        certified_installer: 4,
-        installer_pending_certification: 4,
-        laborer: 4
+        total: 4,
+        types: [
+          :certified_installer,
+          :installer_pending_certification,
+          :laborer
+        ]
       }
     }, building.crew_makeup)
   end
