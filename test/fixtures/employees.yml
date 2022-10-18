@@ -7,3 +7,7 @@ one:
 two:
   id: 2
   employee_type: 1
+
+three:
+  id: 3
+  employee_type: 2

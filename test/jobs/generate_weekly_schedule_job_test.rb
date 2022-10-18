@@ -7,10 +7,16 @@ class GenerateWeeklyScheduleJobTest < ActiveJob::TestCase
     end
   end
 
-  # test "iterate_buildings should iterate through all buildings" do
-  #   buildings = Building.all
-  #   buildings.each do |building|
-  #     assert_equal building, building
-  #   end
-  # end
+  # TODO: there should be more tests here for sure
+  test "should generate a string with all the days and who's working on what buildings" do
+    buildings(:one)
+    buildings(:two)
+    employees(:one)
+    employees(:two)
+    employee_ptos(:one)
+    employee_ptos(:two)
+
+    assert_equal "{:monday=>[{:building=>298486374, :crew=>[1, 3]}], :tuesday=>[{:building=>980190962, :crew=>[1, 3]}], :wednesday=>[], :thursday=>[], :friday=>[]}", GenerateWeeklyScheduleJob.perform_now
+  end
 end
+
