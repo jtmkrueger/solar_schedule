@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pto_type: 1
+  pto_date: <%= Date.yesterday %>
+  employee_id: 1
+
+two:
+  pto_type: 1
+  pto_date: <%= Date.today %>
+  employee_id: 2

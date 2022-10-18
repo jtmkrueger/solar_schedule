@@ -1,0 +1,32 @@
+<%= form_with(model: employee_pto) do |form| %>
+  <% if employee_pto.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(employee_pto.errors.count, "error") %> prohibited this employee_pto from being saved:</h2>
+
+      <ul>
+        <% employee_pto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :pto_type, style: "display: block" %>
+    <%= form.number_field :pto_type %>
+  </div>
+
+  <div>
+    <%= form.label :pto_date, style: "display: block" %>
+    <%= form.date_field :pto_date %>
+  </div>
+
+  <div>
+    <%= form.label :employee_id, style: "display: block" %>
+    <%= form.number_field :employee_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
