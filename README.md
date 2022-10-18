@@ -49,4 +49,5 @@ Built on ruby 3.1.2 but should work with anything greater than or equal to ruby 
   * it could be a model and not just a class
   * could be something that can be viewed daily/weekly/monthly.
   * I spent more time on the different objects that make it up and decided to just have schedule be a rake task
+* I could write more tests around the job and the Schedule class
 * I just commited everything in one gigantic commit instead of breaking things up more. Individual commits for each file/change/feature would have been _way, way, way_ better but I only had a few hours to get to a solution.
