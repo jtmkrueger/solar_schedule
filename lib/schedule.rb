@@ -17,16 +17,17 @@ class Schedule
     end
 
     puts @schedule.inspect
+    @schedule.inspect
   end
 
   private
 
   def iterate_buildings(employees, day)
     filtered_employee_ids = []
-    @buildings.each_with_index do |building, i|
+    @buildings.each do |building|
       filled = find_employees(building, employees.filter { |el| filtered_employee_ids.exclude?(el.id) }, day)
       filtered_employee_ids.push(@schedule[day].last[:crew]).flatten! if filled
-      @buildings.slice!(i) if filled
+      @buildings.slice!(@buildings.index(building)) if filled
     end
   end
 
