@@ -25,7 +25,11 @@ class Schedule
   def iterate_buildings(employees, day)
     filtered_employee_ids = []
     @buildings.each do |building|
-      filled = find_employees(building, employees.filter { |el| filtered_employee_ids.exclude?(el.id) }, day)
+      filled = find_employees(
+        building,
+        employees.filter { |el| filtered_employee_ids.exclude?(el.id) },
+        day
+      )
       filtered_employee_ids.push(@schedule[day].last[:crew]).flatten! if filled
       @buildings.slice!(@buildings.index(building)) if filled
     end
